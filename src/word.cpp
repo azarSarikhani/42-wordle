@@ -7,9 +7,13 @@
 
 bool word_is_valid(const std::string& word)
 {
-	if (word.size() != 5) {
+	if (word.size() < 5) {
 		
 		printf("Word too short\n");
+		return false;
+	}
+	if (word.size() > 5) {
+		printf("Word too long\n");
 		return false;
 	}
 	for (auto letter : word) {
