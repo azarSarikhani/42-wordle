@@ -1,21 +1,18 @@
 #include "../includes/wordle.hpp"
 #include<iostream>
-// app loop
-// 	main menu
-// 	load dictionary
-// 	pick word of the day
-// 	validate word of the day
-// 	loop max 6 times:
-// 		display guesses
-// 		prompt input
-// 		validate input
-// 		colorize input
-// 		if all right
-// 			quit
 
 int main()
 {
+	std::vector<std::string> dictionary = load_dictionary(DICTIONARY_PATH);
 
-    std::string word = load_word(DICTIONARY_PATH);
-    game_on(word);
+	if (dictionary.empty())
+	{
+		std::cerr << "Could not load dictionary\n";
+		return 1;
+	}
+
+    std::string word = get_word_of_day(dictionary);
+    game_on(dictionary, word);
+
+    return 0;
 }

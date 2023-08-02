@@ -7,8 +7,10 @@
 #define DICTIONARY_PATH "words.txt"
 
 bool word_is_valid(const std::string& word);
+bool word_is_in_dict(const std::string& word, const std::vector<std::string>& dictionary);
 
-std::string	load_word(const std::string& dictionary_path);
+std::vector<std::string>	load_dictionary(const std::string& path);
+std::string get_word_of_day(const std::vector<std::string>& dictionary);
 
 class Guesses
 {
@@ -19,4 +21,4 @@ public:
 	~Guesses(void);
 };
 
-void	game_on(std::string word);
+void	game_on(const std::vector<std::string>& dictionary, std::string word);
