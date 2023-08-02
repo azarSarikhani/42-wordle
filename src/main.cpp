@@ -1,4 +1,4 @@
-
+#include "../includes/wordle.hpp"
 // app loop
 // 	main menu
 // 	load dictionary
@@ -14,5 +14,7 @@
 
 int main()
 {
-
+    char word[6] = "weary";
+    word[6] = 0;
+    game_on(word);
 }
