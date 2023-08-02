@@ -4,6 +4,7 @@ NAME := wordle
 
 SRCDIR := ./src
 OBJDIR := ./obj
+INCDIR := ./includes
 
 SRC :=\
 	main.cpp \
@@ -16,7 +17,7 @@ ARCH := $(shell uname)
 # Compilation and linking
 
 CC := cc
-CFLAGS := -Wall -Werror -Wextra $(INCLUDE)
+CFLAGS := -Wall -Werror -Wextra -I$(INCDIR)
 
 # Rules
 
