@@ -1,0 +1,11 @@
+wordle
+
+*.o
+*.d
+
+obj/
+
+.ccls-cache/
+.cache/
+
+compile_commands.json
