@@ -35,6 +35,10 @@ void	game_on(const std::vector<std::string>& dictionary, std::string word)
 		}
 		printf("Enter your guess : \n");
 		std::getline(std::cin, guess.buffer);
+		for (auto& letter: guess.buffer)
+		{
+			letter = std::toupper(letter);
+		}
 		if (word_is_valid(guess.buffer) && word_is_in_dict(guess.buffer, dictionary))
 		{
 			std::string new_line;

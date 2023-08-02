@@ -51,6 +51,10 @@ std::vector<std::string>	load_dictionary(const std::string& path)
 	std::string	line;
 	while (std::getline(file, line)) {
 		if (word_is_valid(line)) {
+			for (auto& letter : line)
+			{
+				letter = std::toupper(letter);
+			}
 			word_list.push_back(line);
 		} else {
 			std::cerr << line << " is an invalid word.\n";
