@@ -9,6 +9,8 @@ INCDIR := ./includes
 SRC :=\
 	main.cpp \
 	word.cpp \
+	game.cpp\
+	Guess_class.cpp
 
 OBJ := $(addprefix $(OBJDIR)/,$(SRC:.cpp=.o))
 DEP := $(OBJ:%.o=%.d)

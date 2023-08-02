@@ -1,4 +1,5 @@
 #include "../includes/wordle.hpp"
+#include<iostream>
 // app loop
 // 	main menu
 // 	load dictionary
@@ -14,7 +15,7 @@
 
 int main()
 {
-    char word[6] = "weary";
-    word[6] = 0;
+
+    std::string word = load_word(DICTIONARY_PATH);
     game_on(word);
 }
