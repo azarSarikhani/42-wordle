@@ -7,7 +7,6 @@ int main()
 
 	if (dictionary.empty())
 	{
-		std::cerr << "Could not load dictionary\n";
 		return 1;
 	}
 

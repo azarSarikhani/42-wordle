@@ -50,7 +50,7 @@ std::vector<std::string>	load_dictionary(const std::string& path)
 			}
 			word_list.push_back(line);
 		} else {
-			std::cerr << line << " is an invalid word.\n";
+			std::cerr << line << " is an invalid word. Not included\n";
 		}
 	}
 
