@@ -83,6 +83,7 @@ void	game_on(const std::vector<std::string>& dictionary, std::string word)
 			++i;
 		}
 	}
+	game.display();
 	std::cout << RED << "You lost!" << std::endl;
 	std::cout << "Word of the day was: " << RESET << word << std::endl;
 }
