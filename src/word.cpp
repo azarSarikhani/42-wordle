@@ -66,7 +66,7 @@ std::string get_word_of_day(const std::vector<std::string>& dictionary)
 
 	std::mt19937 random(static_cast<std::mt19937::result_type>(days.count()));
 
-	std::uniform_int_distribution<int> distribution(0, dictionary.size());
+	std::uniform_int_distribution<int> distribution(0, dictionary.size() - 1);
 
 	return dictionary[distribution(random)];
 }
