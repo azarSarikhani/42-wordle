@@ -7,18 +7,12 @@
 
 bool word_is_valid(const std::string& word)
 {
-	if (word.size() < 5) {
+	if (word.size() != 5) {
 		
-		printf("Word too short\n");
-		return false;
-	}
-	if (word.size() > 5) {
-		printf("Word too long\n");
 		return false;
 	}
 	for (auto letter : word) {
 		if (!std::isalpha(letter)) {
-			printf("Invalid character\n");
 			return false;
 		}
 	}
@@ -34,7 +28,6 @@ bool word_is_in_dict(const std::string& word, const std::vector<std::string>& di
 			return true;
 		}
 	}
-	std::cout << "Word is not in dict\n";
 	return false;
 }
 
