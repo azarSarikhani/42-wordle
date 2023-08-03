@@ -89,6 +89,7 @@ void	game_on(const std::vector<std::string>& dictionary, std::string word)
 	{
 		std::cout << "\nEnter your guess : ";
 		std::getline(std::cin, game.buffer);
+		printf("\033[2J");
 		for (auto& letter: game.buffer)
 		{
 			letter = std::toupper(letter);
