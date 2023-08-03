@@ -3,10 +3,12 @@
 #include <cctype>
 #include<iostream>
 
-#define GREY   "\e[0;37m"
-#define GREEN  "\e[0;30;42m"
-#define YELLOW "\e[0;30;43m"
-#define WHITE  "\e[0;30;47m"
+#define RED    "\e[0;31m"
+#define GREEN  "\e[0;32m"
+#define GREY_BG   "\e[0;37m"
+#define GREEN_BG  "\e[0;30;42m"
+#define YELLOW_BG "\e[0;30;43m"
+#define WHITE_BG  "\e[0;30;47m"
 #define RESET  "\e[0m"
 
 key_state	get_letter_color(char letter, std::size_t index, std::string& sample)
@@ -28,10 +30,10 @@ std::string	get_color_escape(key_state state)
 {
 	switch (state)
 	{
-		case key_state::UNUSED:      return WHITE;
-		case key_state::WRONG:       return GREY;
-		case key_state::WRONG_PLACE: return YELLOW;
-		case key_state::RIGHT:       return GREEN;
+		case key_state::UNUSED:      return WHITE_BG;
+		case key_state::WRONG:       return GREY_BG;
+		case key_state::WRONG_PLACE: return YELLOW_BG;
+		case key_state::RIGHT:       return GREEN_BG;
 		default: return RESET;
 	}
 }
@@ -87,7 +89,6 @@ void	game_on(const std::vector<std::string>& dictionary, std::string word)
 	{
 		std::cout << "\nEnter your guess : ";
 		std::getline(std::cin, game.buffer);
-		std::cout << '\n';
 		for (auto& letter: game.buffer)
 		{
 			letter = std::toupper(letter);
@@ -121,7 +122,7 @@ void	game_on(const std::vector<std::string>& dictionary, std::string word)
 			if (game.buffer == word)
 			{
 				game.display();
-				printf("Yay you win\n");
+				std::cout << GREEN << "Yay you win!\n";
 				return ;
 			} 
 			
@@ -135,6 +136,6 @@ void	game_on(const std::vector<std::string>& dictionary, std::string word)
 		}
 	}
 	game.display();
-	std::cout << "You lost!" << std::endl;
-	std::cout << "Word of the day was: " << word << std::endl;
+	std::cout << RED << "You lost!" << std::endl;
+	std::cout << "Word of the day was: " << RESET << word << std::endl;
 }
