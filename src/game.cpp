@@ -76,7 +76,7 @@ void	game_on(const std::vector<std::string>& dictionary, std::string word)
 			if (game.buffer == word)
 			{
 				game.display();
-				std::cout << GREEN << "Yay you win!\n";
+				std::cout << GREEN << "Yay you win with " << i + 1 << " guesses!\n";
 				return ;
 			} 
 			
