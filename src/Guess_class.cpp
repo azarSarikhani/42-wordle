@@ -19,7 +19,7 @@ Wordle::~Wordle(void)
 	return;
 }
 
-void	Wordle::display() const
+void	Wordle::display()
 {
 	std::cout << "\033[2J";
 	std::cout
@@ -48,7 +48,6 @@ void	Wordle::display() const
 		0, 18, 3, 5, 6, 7, 9, 10, 11,
 		25, 23, 2, 21, 1, 13, 12
 	};
-
 	std::cout << "| ";
 	std::size_t l = 0;
 	while (key_map[l] != 0)
@@ -71,4 +70,9 @@ void	Wordle::display() const
 	std::cout << RESET << "      |\n";
 	std::cout << "|                                |\n";
 	std::cout << "#================================#\n";
+	if (!info.empty())
+	{
+		std::cout << '\n' << info;
+		info.clear();
+	}
 }

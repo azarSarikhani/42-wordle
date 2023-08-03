@@ -36,13 +36,13 @@ void	game_on(const std::vector<std::string>& dictionary, std::string word)
 
 	for (int i = 0; i < 6;)
 	{
+		game.display();
 		std::cout << "\nEnter your guess : ";
 		if (!std::getline(std::cin, game.buffer))
 		{
 			std::cout << "\nExiting ";
 			return ;
 		}
-		std::cout << "\033[2J";
 		for (auto& letter: game.buffer)
 		{
 			letter = std::toupper(letter);
@@ -82,14 +82,7 @@ void	game_on(const std::vector<std::string>& dictionary, std::string word)
 			
 			++i;
 		}
-		game.display();
-		if (!game.info.empty())
-		{
-			std::cout << '\n' << game.info;
-			game.info.clear();
-		}
 	}
-	game.display();
 	std::cout << RED << "You lost!" << std::endl;
 	std::cout << "Word of the day was: " << RESET << word << std::endl;
 }

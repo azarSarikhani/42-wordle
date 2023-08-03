@@ -29,7 +29,7 @@ public:
 	Wordle();
 	~Wordle();
 
-	void display() const;
+	void display();
 
 	std::vector<std::string> guess;
 	std::vector<key_state> keys;
